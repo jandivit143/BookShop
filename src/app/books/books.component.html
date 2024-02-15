@@ -1,0 +1,28 @@
+<h2>Programming Books List!</h2>
+<!-- Event Binding -->
+<!-- <button (click)="handleClick();" [disabled]="isDisabled">Show Books</button> -->
+<!-- <button (click)="toggleBooks();">Toggle Books</button> -->
+<!-- <button (click)="isShowing = !isShowing;">
+    <ng-container *ngIf="!isShowing">Show Books</ng-container>
+    <ng-container *ngIf="isShowing">Hide Books</ng-container>
+</button> -->
+<!-- Two Way Binding -->
+<!-- <input type="text" [(ngModel)]="myName" />
+<p>{{myName}}</p> -->
+<ul *ngIf="isShowing">
+    <!-- <li> -->
+        <!-- Property Binding -->
+        <!-- <img [src]="src" [alt]="name" width="100" />
+        {{name}} by {{author}}
+    </li>
+    <li> -->
+        <!-- Interpolation Binding -->
+        <!-- <img src="{{src2}}" alt="{{name2}}" width="100" />
+        {{name2}} by {{author2}}
+    </li> -->
+
+    <!-- *ngFor Directive -->
+    <ng-container *ngFor="let book of books; let i=index">
+        <app-book (bookEmitter)="addToCart($event);" [book]="book"></app-book>
+    </ng-container>
+</ul>
